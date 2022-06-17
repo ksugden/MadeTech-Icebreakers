@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    background-color: aliceblue;
+  }
+  /*
+   * Formatting the header area
+   */
+  header {
+    background-color: #90df87;
+    height: 50px;
+    width: 100%;
+    opacity: .9;
+    margin-bottom: 10px;
+  }
+  /*
+   * Centering the body content
+   */
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 3em;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+  h3 {
+    font-size: 1.7em;
+    font-weight: 100;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #999;
+  }
+  .icebreaker-card {
+    height: 344px;
+    width: 480px;
+    background-color: white;
+    margin: 20px;
+    position: relative;
+    vertical-align: middle;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  }
+  .card-content {
+    box-sizing: border-box;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	top: 48px;
+	left: 48px;
+	right: 48px;
+	bottom: 48px;
+    padding: 50px;
+    /* background-color: beige; */
+    border: thick solid black;
+    justify-content: center;
+  }
+  .card-text {
+
+  }
