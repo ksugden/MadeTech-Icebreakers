@@ -1,11 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h2>{{ message }}</h2>
   <div class="icebreaker-card">
     <div class="card-content">
       <div class="card-text">
         <p>{{ card }}</p>
       </div>
     </div>
+  </div>
+{% endblock %}
+{% block next %}
+  <div class="icebreaker-card">          
+    <form action="/" method="POST">
+      <input type="image" name="submit" src="static/img/made_tech_mountains.png" alt="Next">
+    </form>
   </div>
 {% endblock %}
