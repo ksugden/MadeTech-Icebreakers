@@ -1,10 +1,13 @@
-from random import randint
+from random import choice
+
 
 with open("data/cards.txt") as file:
-    cards = file.read().splitlines()
+    cards = file.readlines()
+
 
 def random_card():
-    return cards[randint(0,len(cards)-1)]
+    return choice(cards)
+
 
 class RandomCard:    
     def __init__(self) -> None:
