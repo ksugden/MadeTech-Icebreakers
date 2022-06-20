@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #444;
     background-color: aliceblue;
   }
@@ -9,7 +9,8 @@ body {
    * Formatting the header area
    */
   header {
-    background-color: #90df87;
+    font-family: "Poppins", sans-serif;
+    background-color: #40C842;
     height: 50px;
     width: 100%;
     opacity: .9;
@@ -23,6 +24,7 @@ body {
     margin: 0 auto;
   }
   h2 {
+    font-family: "Poppins", sans-serif;
     font-size: 3em;
     margin-top: 40px;
     text-align: center;
