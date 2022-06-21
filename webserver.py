@@ -3,7 +3,7 @@ from randomcard import *
 
 app = Flask(__name__)
 
-@app.route("made-tech-icebreaker.herokuapp.com/", methods=['GET','POST'])
+@app.route("/", methods=['GET','POST'])
 def random_card():
     baseMessage = 'Your card is:'
     mycard = RandomCard()
