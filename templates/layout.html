@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block title %}Made Tech icebreaker cards{% endblock %}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
-  <body>
-    <header>
+</head>
+<body>
+<div class="flow">
+    <header class="wrapper">
+        <img src="static/img/made_tech_mountains.png" height="64" width="64" alt="">
         <h1>{% block heading %}Made Tech icebreaker cards{% endblock %}</h1>
-    </header>  
-    <div class="flex-container">    
-      <div class="container">
-        {% block next %}
-        {% endblock %}  
-      </div>
-      <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
-    </div>
-  </body>
+    </header>
+    <main class="wrapper">
+        <div class="flow flow--centred">
+            <section class="container">
+                {% block content %}
+                {% endblock %}
+            </section>
+            <section class="container">
+                {% block next %}
+                {% endblock %}
+            </section>
+        </div>
+    </main>
+</div>
+</body>
 </html>

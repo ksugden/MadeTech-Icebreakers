@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="icebreaker-card">
-    <div class="card-content">
-      <div class="card-text">
-        <p>{{ card }}</p>
-      </div>
-    </div>
-  </div>
+    <article class="icebreaker-card">
+        <div class="card-content">
+            <img class="card-mt-logo-top-left" src="static/img/made_tech_mountains.png" alt="" height=38" width="38">
+            <p><span class="visually-hidden">Icebreaker card question: </span>{{ card }}</p>
+            <img class="card-mt-logo-bottom-right" src="static/img/made_tech_mountains.png" alt="" height=38" width="38">
+        </div>
+    </article>
 {% endblock %}
 {% block next %}
-  <div class="icebreaker-card">          
-    <form action="/" method="POST">
-      <input type="image" name="submit" src="static/img/made_tech_mountains.png" alt="Next">
-    </form>
-  </div>
+    <article>
+        <form action="/" method="POST">
+            <button class="next-card">Next card</button>
+        </form>
+    </article>
 {% endblock %}
