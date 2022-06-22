@@ -1,74 +1,133 @@
+:root {
+    --spacing: 1.5rem;
+    --mt-green: #40C842;
+    --mt-new-green: #00ac32;
+    --light-grey: #F1F1F1;
+    --mt-font-colour: #444;
+
+    --mt-font-heading: "Poppins", sans-serif;
+    --mt-font-body: "Montserrat", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
-    color: #444;
-    background-color: aliceblue;
-  }
-  /*
-   * Formatting the header area
-   */
-  header {
-    font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: #40C842;
-    height: 80px;
+    font-family: var(--mt-font-body);
+    color: var(--mt-font-colour);
+    background-color: var(--light-grey);
+}
+
+header {
+    font-family: var(--mt-font-heading);
     width: 100%;
     opacity: .9;
-    margin-bottom: 10px;
-    padding: 10px
-  }
-  /*
-   * Centering the body content
-   */
-   .flex-container {
+    justify-content: center;
     display: flex;
-  }
-   .container {
-    flex: 1;
-    border: 2px;
-  }
-  .container:first-child {
-    margin-right: 20px
-  }
-  h2 {
-    font-family: "Poppins", sans-serif;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wrapper {
+    width: 90vw;
+    width: clamp(16rem, 90vw, 70rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    position: relative;
+}
+
+.flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flow > * {
+    margin-block: 0;
+}
+
+.flow > * + * {
+    margin-block-start: var(--spacing, 1.5rem);
+}
+
+.flow--centred {
+    align-items: center;
+}
+
+h2 {
+    font-family: var(--mt-font-heading);
     font-size: 3em;
-    margin-top: 40px;
+    margin-top: 2rem;
     text-align: center;
     letter-spacing: -2px;
-  }
-  h3 {
+}
+
+h3 {
     font-size: 1.7em;
     font-weight: 100;
     margin-top: 30px;
     text-align: center;
     letter-spacing: -1px;
     color: #999;
-  }
-  .icebreaker-card {
-    height: 344px;
-    width: 480px;
-    background-color: white;
-    margin: 20px;
-    position: relative;
-    vertical-align: middle;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  }
-  .card-content {
-    box-sizing: border-box;
-	  position: absolute;
-	  display: flex;
-	  justify-content: space-between;
-	  top: 48px;
-	  left: 48px;
-	  right: 48px;
-	  bottom: 48px;
-    padding: 50px;
-    border: thin solid black;
-    justify-content: center;
-  }
-  .card-text {
+}
 
-  }
+.icebreaker-card {
+    background-color: white;
+    width: 24rem;
+    height: 60vh;
+    height: clamp(16rem, 60vh, 32rem);
+    border-radius: 4px;
+}
+
+.card-content {
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    padding: 2rem;
+    outline: thin solid black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 1s ease-in-out;
+    font-size: 1.25rem;
+    height: inherit;
+}
+
+.next-card {
+    display: inline-block;
+    padding: 16px 19px 12px 20px;
+    box-shadow: 3px 3px 0 0 var(--mt-new-green);
+    border: 0;
+    background-color: #222;
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 0;
+    font-weight: 800;
+    line-height: 1.5;
+    text-decoration: none;
+    text-align: left;
+}
+
+.next-card:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff !important;
+}
+
+.next-card:focus {
+    outline-offset: 5px;
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* Used to hide content but still make it available to the Accessibility tree, e.g., so screen readers will read
+ the content */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
