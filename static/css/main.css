@@ -32,6 +32,11 @@ header {
     display: flex;
     align-items: center;
     gap: var(--s-1);
+    padding-top: var(--s2);
+}
+
+h1 {
+    font-size: 2em;
 }
 
 .wrapper {
@@ -39,8 +44,8 @@ header {
     width: clamp(16rem, 90vw, 70rem);
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--s1, 1rem);
-    padding-right: var(--s1, 1rem);
+    padding-left: var(--s0, 1rem);
+    padding-right: var(--s0, 1rem);
     position: relative;
 }
 
@@ -62,23 +67,23 @@ header {
     align-items: center;
 }
 
-h2 {
-    font-family: var(--mt-font-heading);
-    font-size: 3em;
-    margin-top: var(--s2);
-    text-align: center;
-    letter-spacing: -2px;
+.navigation {
+    margin-bottom: var(--s2, 2.5rem);
 }
 
 .icebreaker-card {
     background-color: white;
-    width: 24rem;
-    height: 60vh;
-    height: clamp(16rem, 60vh, 32rem);
+    height: 50vh;
+    height: clamp(16rem, 50vh, 32rem);
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.icebreaker-card p {
+    max-width: 24ch;
+    font-size: 1.2em;
 }
 
 .card-content::after,
@@ -111,8 +116,6 @@ h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: all 1s ease-in-out;
-    font-size: 1.25rem;
     height: calc(100% - clamp(1rem, 4rem, 5rem));
     width: calc(100% - clamp(1rem, 4rem, 5rem));
     z-index: 0;
@@ -169,4 +172,15 @@ h2 {
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .icebreaker-card p {
+        font-size: .9em;
+    }
 }
