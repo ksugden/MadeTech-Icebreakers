@@ -14,18 +14,18 @@
         <img src="static/img/made_tech_mountains.png" height="64" width="64" alt="">
         <h1>{% block heading %}Made Tech icebreaker cards{% endblock %}</h1>
     </header>
-    <div class="wrapper">
+    <main class="wrapper">
         <div class="flow flow--centred">
-            <div class="container">
+            <section class="container">
                 {% block content %}
                 {% endblock %}
-            </div>
-            <div class="container">
+            </section>
+            <section class="container">
                 {% block next %}
                 {% endblock %}
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
 </div>
 </body>
 </html>
