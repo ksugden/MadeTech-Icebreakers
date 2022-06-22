@@ -3,6 +3,7 @@
     --mt-new-green: #00ac32;
     --light-grey: #F1F1F1;
     --mt-font-colour: #444;
+    --mt-dark-grey: #222;
 
     --mt-font-heading: "Poppins", sans-serif;
     --mt-font-body: "Montserrat", sans-serif;
@@ -26,7 +27,6 @@ body {
 
 header {
     font-family: var(--mt-font-heading);
-    width: 100%;
     opacity: .9;
     justify-content: center;
     display: flex;
@@ -70,15 +70,6 @@ h2 {
     letter-spacing: -2px;
 }
 
-h3 {
-    font-size: 1.7em;
-    font-weight: 100;
-    margin-top: var(--s2);
-    text-align: center;
-    letter-spacing: -1px;
-    color: #999;
-}
-
 .icebreaker-card {
     background-color: white;
     width: 24rem;
@@ -95,9 +86,9 @@ h3 {
     background-color: white;
     content: "";
     display: block;
-    height: 1.5rem;
+    height: var(--s1);
     position: absolute;
-    width: 1.5rem;
+    width: var(--s1);
 }
 
 .card-content::after {
@@ -115,7 +106,7 @@ h3 {
     box-sizing: border-box;
     background-color: white;
     display: flex;
-    padding: 2rem;
+    padding: var(--s2);
     outline: thin solid black;
     justify-content: center;
     align-items: center;
@@ -141,12 +132,13 @@ h3 {
     z-index: 2;
 }
 
+/* Taken from the Made Tech website */
 .next-card {
     display: inline-block;
     padding: 16px 19px 12px 20px;
     box-shadow: 3px 3px 0 0 var(--mt-new-green);
     border: 0;
-    background-color: #222;
+    background-color: var(--mt-dark-grey);
     color: #fff;
     font-size: 1.25rem;
     border-radius: 0;
@@ -167,8 +159,8 @@ h3 {
     outline: -webkit-focus-ring-color auto 1px;
 }
 
-/* Used to hide content but still make it available to the Accessibility tree, i.e., so screen readers will read
- the content */
+/* Used to hide content but still make it available to the
+   Accessibility tree, i.e., so screen readers will read the content */
 .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
