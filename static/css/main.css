@@ -1,5 +1,4 @@
 :root {
-    --spacing: 1.5rem;
     --mt-green: #40C842;
     --mt-new-green: #00ac32;
     --light-grey: #F1F1F1;
@@ -7,6 +6,14 @@
 
     --mt-font-heading: "Poppins", sans-serif;
     --mt-font-body: "Montserrat", sans-serif;
+
+    /* Modular scale for spacing */
+    --ratio: 1.5;
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
 }
 
 body {
@@ -24,7 +31,7 @@ header {
     justify-content: center;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--s-1);
 }
 
 .wrapper {
@@ -32,8 +39,8 @@ header {
     width: clamp(16rem, 90vw, 70rem);
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
+    padding-left: var(--s1, 1rem);
+    padding-right: var(--s1, 1rem);
     position: relative;
 }
 
@@ -48,7 +55,7 @@ header {
 }
 
 .flow > * + * {
-    margin-block-start: var(--spacing, 1.5rem);
+    margin-block-start: var(--s1, 1.5rem);
 }
 
 .flow--centred {
@@ -58,7 +65,7 @@ header {
 h2 {
     font-family: var(--mt-font-heading);
     font-size: 3em;
-    margin-top: 2rem;
+    margin-top: var(--s2);
     text-align: center;
     letter-spacing: -2px;
 }
@@ -66,7 +73,7 @@ h2 {
 h3 {
     font-size: 1.7em;
     font-weight: 100;
-    margin-top: 30px;
+    margin-top: var(--s2);
     text-align: center;
     letter-spacing: -1px;
     color: #999;
@@ -78,9 +85,33 @@ h3 {
     height: 60vh;
     height: clamp(16rem, 60vh, 32rem);
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content::after,
+.card-content::before {
+    background-color: white;
+    content: "";
+    display: block;
+    height: 1.5rem;
+    position: absolute;
+    width: 1.5rem;
+}
+
+.card-content::after {
+    bottom: -1px;
+    right: -1px;
+}
+
+.card-content::before {
+    top: -1px;
+    left: -1px;
 }
 
 .card-content {
+    position: relative;
     box-sizing: border-box;
     background-color: white;
     display: flex;
@@ -91,7 +122,23 @@ h3 {
     text-align: center;
     transition: all 1s ease-in-out;
     font-size: 1.25rem;
-    height: inherit;
+    height: calc(100% - clamp(1rem, 4rem, 5rem));
+    width: calc(100% - clamp(1rem, 4rem, 5rem));
+    z-index: 0;
+}
+
+.card-mt-logo-top-left {
+    position: absolute;
+    left: -18px;
+    top: -18px;
+    z-index: 2;
+}
+
+.card-mt-logo-bottom-right {
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    z-index: 2;
 }
 
 .next-card {
@@ -120,14 +167,14 @@ h3 {
     outline: -webkit-focus-ring-color auto 1px;
 }
 
-/* Used to hide content but still make it available to the Accessibility tree, e.g., so screen readers will read
+/* Used to hide content but still make it available to the Accessibility tree, i.e., so screen readers will read
  the content */
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
