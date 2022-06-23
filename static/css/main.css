@@ -82,7 +82,7 @@ h1 {
 }
 
 .icebreaker-card p {
-    max-width: 24ch;
+    width: 24ch;
     font-size: 1.2em;
 }
 
